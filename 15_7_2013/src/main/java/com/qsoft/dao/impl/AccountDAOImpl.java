@@ -11,8 +11,24 @@ import com.qsoft.model.BankAccount;
  * To change this template use File | Settings | File Templates.
  */
 public class AccountDAOImpl implements AccountDAO{
+
+    @Override
+    public BankAccount createAccount(String accountNumber) {
+        return null;
+    }
+
     @Override
     public BankAccount getAccount(String accountNumber) {
         return null;
+    }
+
+    @Override
+    public long deposit(String accountNumber, long amount, String description) {
+        return 0;
+    }
+
+    @Override
+    public long withdraw(String accountNumber, long amount, String description) {
+        return 0;
     }
 }
