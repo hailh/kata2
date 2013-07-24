@@ -7,6 +7,8 @@ import com.qsoft.service.AccountService;
 import com.qsoft.service.impl.AccountServiceImpl;
 import org.junit.Test;
 
+import java.util.Date;
+
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
@@ -89,5 +91,26 @@ public class BankAccountTest{
 
         service.getTransactionsOccurred(accountNumber);
         verify(transactionDAO).getTransactionsOccurred(accountNumber);
+    }
+
+    @Test
+    public void getTransactionsOccurredFromStartTimeToStopTimeTest() {
+        setUp();
+        String accountNumber = "0123456789";
+        Date startTime = new Date(2013, 7, 15);
+        Date stopTime = new Date(2013, 7, 20);
+
+        service.getTransactionsOccurred(accountNumber, startTime, stopTime);
+        verify(transactionDAO).getTransactionsOccurred(accountNumber, startTime, stopTime);
+    }
+
+    @Test
+    public void getNewTransactionsOccurredTest() {
+        setUp();
+        String accountNumber = "0123456789";
+        int times = 100;
+
+        service.getNewTransactionsOccurred(accountNumber, times);
+        verify(transactionDAO).getNewTransactionsOccurred(accountNumber, times);
     }
 }

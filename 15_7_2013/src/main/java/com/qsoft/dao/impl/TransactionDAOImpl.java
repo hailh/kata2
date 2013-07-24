@@ -3,6 +3,7 @@ package com.qsoft.dao.impl;
 import com.qsoft.dao.TransactionDAO;
 import com.qsoft.model.Transaction;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,6 +16,16 @@ import java.util.List;
 public class TransactionDAOImpl implements TransactionDAO{
     @Override
     public List<Transaction> getTransactionsOccurred(String accountNumber) {
+        return null;
+    }
+
+    @Override
+    public List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime) {
+        return null;
+    }
+
+    @Override
+    public List<Transaction> getNewTransactionsOccurred(String accountNumber, int times) {
         return null;
     }
 }

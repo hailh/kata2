@@ -2,6 +2,7 @@ package com.qsoft.dao;
 
 import com.qsoft.model.Transaction;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,4 +14,6 @@ import java.util.List;
  */
 public interface TransactionDAO {
     List<Transaction> getTransactionsOccurred(String accountNumber);
+    List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime);
+    List<Transaction> getNewTransactionsOccurred(String accountNumber, int times);
 }
