@@ -5,6 +5,7 @@ import com.qsoft.dao.TransactionDAO;
 import com.qsoft.model.BankAccount;
 import com.qsoft.model.Transaction;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +18,8 @@ import java.util.List;
  */
 public interface AccountService {
     void setUserDAO(AccountDAO accountDAO);
+
+    void setCalendar(Calendar calendar);
 
     void setTransactionDAO(TransactionDAO transactionDAO);
 

@@ -7,6 +7,7 @@ import com.qsoft.service.AccountService;
 import com.qsoft.service.impl.AccountServiceImpl;
 import org.junit.Test;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import static org.junit.Assert.assertTrue;
@@ -24,13 +25,16 @@ public class BankAccountTest{
     private AccountDAO accountDAO;
     private TransactionDAO transactionDAO;
     private AccountService service;
+    private Calendar calendar;
 
     public void setUp(){
         service = new AccountServiceImpl();
         accountDAO = mock(AccountDAOImpl.class);
         transactionDAO = mock(TransactionDAOImpl.class);
+        calendar = mock(Calendar.class);
         service.setUserDAO(accountDAO);
         service.setTransactionDAO(transactionDAO);
+        service.setCalendar(calendar);
     }
 
     @Test
@@ -70,6 +74,18 @@ public class BankAccountTest{
     }
 
     @Test
+    public void depositAccountAndSaveTransactionTest() {
+        setUp();
+        String accountNumber = "0123456789";
+        final long amount = 1000;
+        String description = "Some thing";
+
+        when(calendar.getTimeInMillis()).thenReturn(2000L);
+        service.deposit(accountNumber, amount, description);
+        verify(transactionDAO).deposit(accountNumber, 2000L, amount, description);
+    }
+
+    @Test
     public void withdrawAccountAndReturnBalanceAfterChangingTest() {
         setUp();
         String accountNumber = "0123456789";
@@ -82,6 +98,18 @@ public class BankAccountTest{
 
         when(accountDAO.withdraw(accountNumber, amount, description)).thenReturn(account.getBalance() - amount);
         assertTrue(service.withdraw(accountNumber, amount, description) == oldBalance - amount);
+    }
+
+    @Test
+    public void withdrawAccountAndSaveTransactionTest() {
+        setUp();
+        String accountNumber = "0123456789";
+        final long amount = 1000;
+        String description = "Some thing";
+
+        when(calendar.getTimeInMillis()).thenReturn(2000L);
+        service.withdraw(accountNumber, amount, description);
+        verify(transactionDAO).withdraw(accountNumber, 2000L, amount, description);
     }
 
     @Test

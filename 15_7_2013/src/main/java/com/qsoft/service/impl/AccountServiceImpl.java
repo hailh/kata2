@@ -6,6 +6,7 @@ import com.qsoft.model.BankAccount;
 import com.qsoft.model.Transaction;
 import com.qsoft.service.AccountService;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -19,8 +20,14 @@ import java.util.List;
 public class AccountServiceImpl implements AccountService{
     private AccountDAO accountDAO;
     private TransactionDAO transactionDAO;
+    private Calendar calendar;
     public void setUserDAO(AccountDAO accountDAO) {
         this.accountDAO = accountDAO;
+    }
+
+    @Override
+    public void setCalendar(Calendar calendar) {
+        this.calendar = calendar;
     }
 
     @Override
@@ -40,11 +47,13 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public long deposit(String accountNumber, long amount, String description) {
+        transactionDAO.deposit(accountNumber, calendar.getTimeInMillis(), amount, description);
         return accountDAO.deposit(accountNumber, amount, description);
     }
 
     @Override
     public long withdraw(String accountNumber, long amount, String description) {
+        transactionDAO.withdraw(accountNumber, calendar.getTimeInMillis(), amount, description);
         return accountDAO.withdraw(accountNumber, amount, description);
     }
 

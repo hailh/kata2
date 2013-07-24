@@ -15,6 +15,16 @@ import java.util.List;
  */
 public class TransactionDAOImpl implements TransactionDAO{
     @Override
+    public void deposit(String accountNumber, long timestamp, long amount, String description) {
+
+    }
+
+    @Override
+    public void withdraw(String accountNumber, long timestamp, long amount, String description) {
+
+    }
+
+    @Override
     public List<Transaction> getTransactionsOccurred(String accountNumber) {
         return null;
     }

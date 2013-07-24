@@ -13,6 +13,9 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface TransactionDAO {
+    void deposit(String accountNumber, long timestamp, long amount, String description);
+    void withdraw(String accountNumber, long timestamp, long amount, String description);
+
     List<Transaction> getTransactionsOccurred(String accountNumber);
     List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime);
     List<Transaction> getNewTransactionsOccurred(String accountNumber, int times);
