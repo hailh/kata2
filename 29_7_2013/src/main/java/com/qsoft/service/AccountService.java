@@ -25,4 +25,6 @@ public interface AccountService {
     void setTransactionDAO(TransactionDAO transactionDAO);
 
     void setCalendar(Calendar calendar);
+
+    long withdraw(String accountNumber, long amount, String description);
 }

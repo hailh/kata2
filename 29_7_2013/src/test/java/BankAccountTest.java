@@ -79,4 +79,18 @@ public class BankAccountTest {
         service.deposit(accountNumber, amount, description);
         verify(transactionDAO).deposit(accountNumber, 2000L, amount, description);
     }
+
+    @Test
+    public void withdrawAccountAndReturnBalanceAfterChangingTest() {
+        setUp();
+        String accountNumber = "0123456789";
+        final long amount = 1000;
+        String description = "Some thing";
+
+        when(accountDAO.getAccount(accountNumber)).thenReturn(new BankAccount(accountNumber));
+        final BankAccount account = service.getAccount(accountNumber);
+        long oldBalance = account.getBalance();
+
+        assertTrue(service.withdraw(accountNumber, amount, description) == oldBalance - amount);
+    }
 }

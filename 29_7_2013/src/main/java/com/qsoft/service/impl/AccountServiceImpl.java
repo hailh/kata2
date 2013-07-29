@@ -49,4 +49,9 @@ public class AccountServiceImpl implements AccountService {
     public void setCalendar(Calendar calendar) {
         this.calendar = calendar;
     }
+
+    @Override
+    public long withdraw(String accountNumber, long amount, String description) {
+        return 0;
+    }
 }
