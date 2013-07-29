@@ -32,6 +32,7 @@ public class BankAccountTest {
         calendar = mock(Calendar.class);
         service.setAccountDAO(accountDAO);
         service.setTransactionDAO(transactionDAO);
+        service.setCalendar(calendar);
     }
 
     @Test
@@ -74,6 +75,7 @@ public class BankAccountTest {
         final long amount = 1000;
         String description = "Some thing";
 
+        when(calendar.getTimeInMillis()).thenReturn(2000L);
         service.deposit(accountNumber, amount, description);
         verify(transactionDAO).deposit(accountNumber, 2000L, amount, description);
     }

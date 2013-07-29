@@ -11,7 +11,7 @@ import com.qsoft.dao.TransactionDAO;
  */
 public class TransactionDAOImpl implements TransactionDAO{
     @Override
-    public void deposit(String accountNumber, long l, long amount, String description) {
+    public void deposit(String accountNumber, long timestamp, long amount, String description) {
 
     }
 }

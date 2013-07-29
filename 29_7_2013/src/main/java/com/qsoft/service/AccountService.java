@@ -4,6 +4,8 @@ import com.qsoft.dao.AccountDAO;
 import com.qsoft.dao.TransactionDAO;
 import com.qsoft.model.BankAccount;
 
+import java.util.Calendar;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Dell 3360
@@ -21,4 +23,6 @@ public interface AccountService {
     long deposit(String accountNumber, long amount, String description);
 
     void setTransactionDAO(TransactionDAO transactionDAO);
+
+    void setCalendar(Calendar calendar);
 }

@@ -8,5 +8,5 @@ package com.qsoft.dao;
  * To change this template use File | Settings | File Templates.
  */
 public interface TransactionDAO {
-    void deposit(String accountNumber, long l, long amount, String description);
+    void deposit(String accountNumber, long timestamp, long amount, String description);
 }
