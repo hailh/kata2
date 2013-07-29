@@ -23,4 +23,9 @@ public class AccountServiceImpl implements AccountService {
     public void setAccountDAO(AccountDAO accountDAO) {
         this.accountDAO = accountDAO;
     }
+
+    @Override
+    public BankAccount getAccount(String accountNumber) {
+        return null;
+    }
 }

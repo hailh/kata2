@@ -36,4 +36,11 @@ public class BankAccountTest {
         verify(accountDAO).createAccount(accountNumber);
         assertTrue(account.getBalance() == 0);
     }
+
+    @Test
+    public void getAccountInformationTest() {
+        setUp();
+        String accountNumber = "0123456789";
+        assertTrue(service.getAccount(accountNumber) != null);
+    }
 }

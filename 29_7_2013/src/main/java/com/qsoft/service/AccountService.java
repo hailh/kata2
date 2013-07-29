@@ -11,7 +11,9 @@ import com.qsoft.model.BankAccount;
  * To change this template use File | Settings | File Templates.
  */
 public interface AccountService {
-    public BankAccount open(String accountNumber);
+    BankAccount open(String accountNumber);
 
     void setAccountDAO(AccountDAO accountDAO);
+
+    BankAccount getAccount(String accountNumber);
 }
