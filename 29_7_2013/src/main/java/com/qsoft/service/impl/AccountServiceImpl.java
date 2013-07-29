@@ -1,6 +1,7 @@
 package com.qsoft.service.impl;
 
 import com.qsoft.dao.AccountDAO;
+import com.qsoft.dao.TransactionDAO;
 import com.qsoft.model.BankAccount;
 import com.qsoft.service.AccountService;
 
@@ -13,6 +14,7 @@ import com.qsoft.service.AccountService;
  */
 public class AccountServiceImpl implements AccountService {
     AccountDAO accountDAO;
+    TransactionDAO transactionDAO;
 
     @Override
     public BankAccount open(String accountNumber) {
@@ -32,5 +34,10 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public long deposit(String accountNumber, long amount, String description) {
         return accountDAO.deposit(accountNumber, amount, description);
+    }
+
+    @Override
+    public void setTransactionDAO(TransactionDAO transactionDAO) {
+        this.transactionDAO = transactionDAO;
     }
 }

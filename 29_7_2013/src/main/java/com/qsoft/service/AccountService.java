@@ -1,6 +1,7 @@
 package com.qsoft.service;
 
 import com.qsoft.dao.AccountDAO;
+import com.qsoft.dao.TransactionDAO;
 import com.qsoft.model.BankAccount;
 
 /**
@@ -18,4 +19,6 @@ public interface AccountService {
     BankAccount getAccount(String accountNumber);
 
     long deposit(String accountNumber, long amount, String description);
+
+    void setTransactionDAO(TransactionDAO transactionDAO);
 }

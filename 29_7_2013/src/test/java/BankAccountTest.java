@@ -1,14 +1,16 @@
 import com.qsoft.dao.AccountDAO;
+import com.qsoft.dao.TransactionDAO;
 import com.qsoft.dao.impl.AccountDAOImpl;
+import com.qsoft.dao.impl.TransactionDAOImpl;
 import com.qsoft.model.BankAccount;
 import com.qsoft.service.AccountService;
 import com.qsoft.service.impl.AccountServiceImpl;
 import org.junit.Test;
 
+import java.util.Calendar;
+
 import static junit.framework.Assert.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,12 +21,17 @@ import static org.mockito.Mockito.when;
  */
 public class BankAccountTest {
     private AccountDAO accountDAO;
+    private TransactionDAO transactionDAO;
     private AccountService service;
+    private Calendar calendar;
 
     public void setUp(){
         service = new AccountServiceImpl();
         accountDAO = mock(AccountDAOImpl.class);
+        transactionDAO = mock(TransactionDAOImpl.class);
+        calendar = mock(Calendar.class);
         service.setAccountDAO(accountDAO);
+        service.setTransactionDAO(transactionDAO);
     }
 
     @Test
@@ -58,5 +65,16 @@ public class BankAccountTest {
 
         when(accountDAO.deposit(accountNumber, amount, description)).thenReturn(account.getBalance() + amount);
         assertTrue(service.deposit(accountNumber, amount, description) == oldBalance + amount);
+    }
+
+    @Test
+    public void depositAccountAndSaveTransactionTest() {
+        setUp();
+        String accountNumber = "0123456789";
+        final long amount = 1000;
+        String description = "Some thing";
+
+        service.deposit(accountNumber, amount, description);
+        verify(transactionDAO).deposit(accountNumber, 2000L, amount, description);
     }
 }
