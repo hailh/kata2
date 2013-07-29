@@ -28,4 +28,9 @@ public class AccountServiceImpl implements AccountService {
     public BankAccount getAccount(String accountNumber) {
         return accountDAO.getAccount(accountNumber);
     }
+
+    @Override
+    public long deposit(String accountNumber, long amount, String description) {
+        return 0;
+    }
 }

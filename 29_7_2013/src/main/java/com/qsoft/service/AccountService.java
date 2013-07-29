@@ -16,4 +16,6 @@ public interface AccountService {
     void setAccountDAO(AccountDAO accountDAO);
 
     BankAccount getAccount(String accountNumber);
+
+    long deposit(String accountNumber, long amount, String description);
 }
