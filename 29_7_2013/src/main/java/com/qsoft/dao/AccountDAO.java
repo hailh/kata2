@@ -15,4 +15,6 @@ public interface AccountDAO {
     BankAccount getAccount(String accountNumber);
 
     long deposit(String accountNumber, long amount, String description);
+
+    long withdraw(String accountNumber, long amount, String description);
 }

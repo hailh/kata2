@@ -91,6 +91,7 @@ public class BankAccountTest {
         final BankAccount account = service.getAccount(accountNumber);
         long oldBalance = account.getBalance();
 
+        when(accountDAO.withdraw(accountNumber, amount, description)).thenReturn(account.getBalance() - amount);
         assertTrue(service.withdraw(accountNumber, amount, description) == oldBalance - amount);
     }
 }
