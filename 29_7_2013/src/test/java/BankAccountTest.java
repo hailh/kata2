@@ -41,6 +41,7 @@ public class BankAccountTest {
     public void getAccountInformationTest() {
         setUp();
         String accountNumber = "0123456789";
+        when(accountDAO.getAccount(accountNumber)).thenReturn(new BankAccount(accountNumber));
         assertTrue(service.getAccount(accountNumber) != null);
     }
 }

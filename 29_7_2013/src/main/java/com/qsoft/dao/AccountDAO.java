@@ -11,4 +11,6 @@ import com.qsoft.model.BankAccount;
  */
 public interface AccountDAO {
     BankAccount createAccount(String accountNumber);
+
+    BankAccount getAccount(String accountNumber);
 }

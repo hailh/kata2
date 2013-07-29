@@ -15,4 +15,9 @@ public class AccountDAOImpl implements AccountDAO{
     public BankAccount createAccount(String accountNumber) {
         return null;
     }
+
+    @Override
+    public BankAccount getAccount(String accountNumber) {
+        return null;
+    }
 }

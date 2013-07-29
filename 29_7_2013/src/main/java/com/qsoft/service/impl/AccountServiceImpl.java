@@ -26,6 +26,6 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public BankAccount getAccount(String accountNumber) {
-        return null;
+        return accountDAO.getAccount(accountNumber);
     }
 }
