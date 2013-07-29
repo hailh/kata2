@@ -56,6 +56,7 @@ public class BankAccountTest {
         final BankAccount account = service.getAccount(accountNumber);
         long oldBalance = account.getBalance();
 
+        when(accountDAO.deposit(accountNumber, amount, description)).thenReturn(account.getBalance() + amount);
         assertTrue(service.deposit(accountNumber, amount, description) == oldBalance + amount);
     }
 }

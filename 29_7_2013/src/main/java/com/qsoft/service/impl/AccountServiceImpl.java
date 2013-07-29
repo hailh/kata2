@@ -31,6 +31,6 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public long deposit(String accountNumber, long amount, String description) {
-        return 0;
+        return accountDAO.deposit(accountNumber, amount, description);
     }
 }

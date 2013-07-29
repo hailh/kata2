@@ -20,4 +20,9 @@ public class AccountDAOImpl implements AccountDAO{
     public BankAccount getAccount(String accountNumber) {
         return null;
     }
+
+    @Override
+    public long deposit(String accountNumber, long amount, String description) {
+        return 0;
+    }
 }
