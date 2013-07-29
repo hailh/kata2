@@ -10,6 +10,10 @@ package com.qsoft.model;
 public class BankAccount {
     private int balance;
 
+    public BankAccount(String accountNumber) {
+
+    }
+
     public int getBalance() {
         return balance;
     }
