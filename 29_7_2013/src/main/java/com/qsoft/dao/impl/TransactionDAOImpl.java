@@ -1,6 +1,9 @@
 package com.qsoft.dao.impl;
 
 import com.qsoft.dao.TransactionDAO;
+import com.qsoft.model.Transaction;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,5 +21,10 @@ public class TransactionDAOImpl implements TransactionDAO{
     @Override
     public void withdraw(String accountNumber, long timestamp, long amount, String description) {
 
+    }
+
+    @Override
+    public List<Transaction> getTransactionsOccurred(String accountNumber) {
+        return null;
     }
 }

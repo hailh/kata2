@@ -1,5 +1,9 @@
 package com.qsoft.dao;
 
+import com.qsoft.model.Transaction;
+
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Dell 3360
@@ -11,4 +15,6 @@ public interface TransactionDAO {
     void deposit(String accountNumber, long timestamp, long amount, String description);
 
     void withdraw(String accountNumber, long timestamp, long amount, String description);
+
+    List<Transaction> getTransactionsOccurred(String accountNumber);
 }

@@ -3,8 +3,10 @@ package com.qsoft.service;
 import com.qsoft.dao.AccountDAO;
 import com.qsoft.dao.TransactionDAO;
 import com.qsoft.model.BankAccount;
+import com.qsoft.model.Transaction;
 
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,4 +29,6 @@ public interface AccountService {
     void setCalendar(Calendar calendar);
 
     long withdraw(String accountNumber, long amount, String description);
+
+    List<Transaction> getTransactionsOccurred(String accountNumber);
 }

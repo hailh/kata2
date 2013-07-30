@@ -3,9 +3,11 @@ package com.qsoft.service.impl;
 import com.qsoft.dao.AccountDAO;
 import com.qsoft.dao.TransactionDAO;
 import com.qsoft.model.BankAccount;
+import com.qsoft.model.Transaction;
 import com.qsoft.service.AccountService;
 
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -54,5 +56,10 @@ public class AccountServiceImpl implements AccountService {
     public long withdraw(String accountNumber, long amount, String description) {
         transactionDAO.withdraw(accountNumber, calendar.getTimeInMillis(), amount, description);
         return accountDAO.withdraw(accountNumber, amount, description);
+    }
+
+    @Override
+    public List<Transaction> getTransactionsOccurred(String accountNumber) {
+        return null;
     }
 }

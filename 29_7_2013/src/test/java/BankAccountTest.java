@@ -108,4 +108,13 @@ public class BankAccountTest {
         service.withdraw(accountNumber, amount, description);
         verify(transactionDAO).withdraw(accountNumber, 2000L, amount, description);
     }
+
+    @Test
+    public void getTransactionsOccurredTest() {
+        setUp();
+        String accountNumber = "0123456789";
+
+        service.getTransactionsOccurred(accountNumber);
+        verify(transactionDAO).getTransactionsOccurred(accountNumber);
+    }
 }
