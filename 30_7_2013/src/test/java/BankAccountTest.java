@@ -132,6 +132,11 @@ public class BankAccountTest {
 
     @Test
     public void getTransactionsOccurredTest() throws SQLException {
-        assertTrue(!transactionDAO.getTransactionsOccurred(accountNumber).isEmpty());
+        assertTrue(!service.getTransactionsOccurred(accountNumber).isEmpty());
+    }
+
+    @Test
+    public void getTransactionsOccurredFromStartTimeToStopTimeTest() {
+        assertTrue(!service.getTransactionsOccurred(accountNumber, startTime, stopTime).isEmpty());
     }
 }
