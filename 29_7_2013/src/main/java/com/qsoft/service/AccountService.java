@@ -6,6 +6,7 @@ import com.qsoft.model.BankAccount;
 import com.qsoft.model.Transaction;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,4 +32,6 @@ public interface AccountService {
     long withdraw(String accountNumber, long amount, String description);
 
     List<Transaction> getTransactionsOccurred(String accountNumber);
+
+    List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime);
 }

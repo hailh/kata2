@@ -7,6 +7,7 @@ import com.qsoft.model.Transaction;
 import com.qsoft.service.AccountService;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -61,5 +62,10 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public List<Transaction> getTransactionsOccurred(String accountNumber) {
         return transactionDAO.getTransactionsOccurred(accountNumber);
+    }
+
+    @Override
+    public List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime) {
+        return null;
     }
 }

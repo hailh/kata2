@@ -2,6 +2,7 @@ package com.qsoft.dao;
 
 import com.qsoft.model.Transaction;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,4 +18,6 @@ public interface TransactionDAO {
     void withdraw(String accountNumber, long timestamp, long amount, String description);
 
     List<Transaction> getTransactionsOccurred(String accountNumber);
+
+    List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime);
 }
