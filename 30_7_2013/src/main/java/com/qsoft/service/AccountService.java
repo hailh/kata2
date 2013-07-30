@@ -5,6 +5,7 @@ import com.qsoft.dao.TransactionDAO;
 import com.qsoft.model.BankAccount;
 import com.qsoft.model.Transaction;
 
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface AccountService {
-    BankAccount open(String accountNumber, long timestamp);
+    BankAccount open(String accountNumber, long timestamp) throws SQLException;
 
     void setAccountDAO(AccountDAO accountDAO);
 

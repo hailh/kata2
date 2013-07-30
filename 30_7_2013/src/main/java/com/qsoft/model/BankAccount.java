@@ -10,17 +10,19 @@ package com.qsoft.model;
 public class BankAccount {
     private String accountNumber;
     private long timestamp;
-    private int balance;
+    private long balance;
 
-    public BankAccount(String accountNumber) {
-
+    public BankAccount(String accountNumber, long balance, long timestamp) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.timestamp = timestamp;
     }
 
-    public int getBalance() {
+    public long getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(long balance) {
         this.balance = balance;
     }
 

@@ -18,6 +18,7 @@ import org.junit.Test;
 
 import javax.sql.DataSource;
 import java.nio.charset.Charset;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -44,25 +45,21 @@ public class BankAccountTest {
     Date stopTime = new Date(2013, 7, 20);
     int times = 100;
 
-    //using H2 so that we can create in-memory database for testing
-    // without having to install any DBMS software
     private static final String JDBC_DRIVER = org.h2.Driver.class.getName();
     private static final String JDBC_URL = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1";
     private static final String USER = "sa";
     private static final String PASSWORD = "";
 
-    // create the db table
     @BeforeClass
     public static void createSchema() throws Exception {
         String schemaFileName = System.class.getResource("/schema.sql").toString().substring(6);
         RunScript.execute(JDBC_URL, USER, PASSWORD, schemaFileName, Charset.forName("UTF8"), false);
     }
 
-    // populate the table with test data
     @Before
     public void importDataSet() throws Exception {
-        IDataSet dataSet = readDataSet();  // read data from xml file
-        cleanlyInsert(dataSet);  // empty the db and insert data
+        IDataSet dataSet = readDataSet();
+        cleanlyInsert(dataSet);
     }
 
     private IDataSet readDataSet() throws Exception {
@@ -84,9 +81,9 @@ public class BankAccountTest {
         return dataSource;
     }
 
-    public void setUp(){
+    public void setUp() throws SQLException {
         service = new AccountServiceImpl();
-        accountDAO = new AccountDAOImpl();
+        accountDAO = new AccountDAOImpl(dataSource());
         transactionDAO = new TransactionDAOImpl();
         calendar = Calendar.getInstance();
         service.setAccountDAO(accountDAO);
@@ -96,7 +93,7 @@ public class BankAccountTest {
 
 
     @Test
-    public void openNewAccountWithBalanceEqualToZeroTest() {
+    public void openNewAccountWithBalanceEqualToZeroTest() throws SQLException {
         setUp();
         BankAccount account = service.open(accountNumber, timestamp);
         assertTrue(account.getBalance() == 0);

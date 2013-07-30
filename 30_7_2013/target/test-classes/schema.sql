@@ -1,12 +1,12 @@
 create table if not exists BankAccount (
   accountNumber varchar,
   balance double,
-  timestamp integer
+  timeCreated integer
 );
 
-create table if not exists Transaction (
+create table if not exists Transactions (
   accountNumber varchar,
-  timestamp integer,
+  timeCreated integer,
   amount integer,
   description varchar
 );

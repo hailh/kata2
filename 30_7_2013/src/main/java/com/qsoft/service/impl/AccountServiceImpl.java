@@ -6,6 +6,7 @@ import com.qsoft.model.BankAccount;
 import com.qsoft.model.Transaction;
 import com.qsoft.service.AccountService;
 
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -23,7 +24,7 @@ public class AccountServiceImpl implements AccountService {
     Calendar calendar;
 
     @Override
-    public BankAccount open(String accountNumber, long timestamp) {
+    public BankAccount open(String accountNumber, long timestamp) throws SQLException {
         return accountDAO.createAccount(accountNumber, timestamp);
     }
 

@@ -2,6 +2,8 @@ package com.qsoft.dao;
 
 import com.qsoft.model.BankAccount;
 
+import java.sql.SQLException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Dell 3360
@@ -10,7 +12,7 @@ import com.qsoft.model.BankAccount;
  * To change this template use File | Settings | File Templates.
  */
 public interface AccountDAO {
-    BankAccount createAccount(String accountNumber, long timestamp);
+    BankAccount createAccount(String accountNumber, long timestamp) throws SQLException;
 
     BankAccount getAccount(String accountNumber);
 
