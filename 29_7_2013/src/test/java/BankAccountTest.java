@@ -26,6 +26,14 @@ public class BankAccountTest {
     private AccountService service;
     private Calendar calendar;
 
+    String accountNumber = "0123456789";
+    long timestamp = 5000L;
+    long amount = 1000;
+    String description = "Some thing";
+    Date startTime = new Date(2013, 7, 15);
+    Date stopTime = new Date(2013, 7, 20);
+    int times = 100;
+
     public void setUp(){
         service = new AccountServiceImpl();
         accountDAO = mock(AccountDAOImpl.class);
@@ -34,14 +42,14 @@ public class BankAccountTest {
         service.setAccountDAO(accountDAO);
         service.setTransactionDAO(transactionDAO);
         service.setCalendar(calendar);
+
+        when(accountDAO.createAccount(accountNumber, timestamp)).thenReturn(new BankAccount(accountNumber));
+        when(accountDAO.getAccount(accountNumber)).thenReturn(new BankAccount(accountNumber));
     }
 
     @Test
     public void openNewAccountWithBalanceEqualToZeroTest() {
         setUp();
-        String accountNumber = "0123456789";
-        long timestamp = 5000L;
-        when(accountDAO.createAccount(accountNumber, timestamp)).thenReturn(new BankAccount(accountNumber));
         BankAccount account = service.open(accountNumber, timestamp);
         verify(accountDAO).createAccount(accountNumber, timestamp);
         assertTrue(account.getBalance() == 0);
@@ -50,20 +58,13 @@ public class BankAccountTest {
     @Test
     public void getAccountInformationTest() {
         setUp();
-        String accountNumber = "0123456789";
-        when(accountDAO.getAccount(accountNumber)).thenReturn(new BankAccount(accountNumber));
         assertTrue(service.getAccount(accountNumber) != null);
     }
 
     @Test
     public void depositAccountAndReturnBalanceAfterChangingTest() {
         setUp();
-        String accountNumber = "0123456789";
-        final long amount = 1000;
-        String description = "Some thing";
-
-        when(accountDAO.getAccount(accountNumber)).thenReturn(new BankAccount(accountNumber));
-        final BankAccount account = service.getAccount(accountNumber);
+        BankAccount account = service.getAccount(accountNumber);
         long oldBalance = account.getBalance();
 
         when(accountDAO.deposit(accountNumber, amount, description)).thenReturn(account.getBalance() + amount);
@@ -74,10 +75,6 @@ public class BankAccountTest {
     @Test
     public void depositAccountAndSaveTransactionTest() {
         setUp();
-        String accountNumber = "0123456789";
-        final long amount = 1000;
-        String description = "Some thing";
-
         when(calendar.getTimeInMillis()).thenReturn(2000L);
         service.deposit(accountNumber, amount, description);
         verify(transactionDAO).deposit(accountNumber, 2000L, amount, description);
@@ -86,12 +83,7 @@ public class BankAccountTest {
     @Test
     public void withdrawAccountAndReturnBalanceAfterChangingTest() {
         setUp();
-        String accountNumber = "0123456789";
-        final long amount = 1000;
-        String description = "Some thing";
-
-        when(accountDAO.getAccount(accountNumber)).thenReturn(new BankAccount(accountNumber));
-        final BankAccount account = service.getAccount(accountNumber);
+        BankAccount account = service.getAccount(accountNumber);
         long oldBalance = account.getBalance();
 
         when(accountDAO.withdraw(accountNumber, amount, description)).thenReturn(account.getBalance() - amount);
@@ -102,10 +94,6 @@ public class BankAccountTest {
     @Test
     public void withdrawAccountAndSaveTransactionTest() {
         setUp();
-        String accountNumber = "0123456789";
-        final long amount = 1000;
-        String description = "Some thing";
-
         when(calendar.getTimeInMillis()).thenReturn(2000L);
         service.withdraw(accountNumber, amount, description);
         verify(transactionDAO).withdraw(accountNumber, 2000L, amount, description);
@@ -114,8 +102,6 @@ public class BankAccountTest {
     @Test
     public void getTransactionsOccurredTest() {
         setUp();
-        String accountNumber = "0123456789";
-
         service.getTransactionsOccurred(accountNumber);
         verify(transactionDAO).getTransactionsOccurred(accountNumber);
     }
@@ -123,10 +109,6 @@ public class BankAccountTest {
     @Test
     public void getTransactionsOccurredFromStartTimeToStopTimeTest() {
         setUp();
-        String accountNumber = "0123456789";
-        Date startTime = new Date(2013, 7, 15);
-        Date stopTime = new Date(2013, 7, 20);
-
         service.getTransactionsOccurred(accountNumber, startTime, stopTime);
         verify(transactionDAO).getTransactionsOccurred(accountNumber, startTime, stopTime);
     }
@@ -134,9 +116,6 @@ public class BankAccountTest {
     @Test
     public void getNewTransactionsOccurredTest() {
         setUp();
-        String accountNumber = "0123456789";
-        int times = 100;
-
         service.getNewTransactionsOccurred(accountNumber, times);
         verify(transactionDAO).getNewTransactionsOccurred(accountNumber, times);
     }
