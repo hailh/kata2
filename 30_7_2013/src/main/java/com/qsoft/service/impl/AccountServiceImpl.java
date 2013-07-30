@@ -34,7 +34,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public BankAccount getAccount(String accountNumber) {
+    public BankAccount getAccount(String accountNumber) throws SQLException {
         return accountDAO.getAccount(accountNumber);
     }
 

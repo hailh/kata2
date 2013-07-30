@@ -36,7 +36,7 @@ public class AccountDAOImpl implements AccountDAO{
     }
 
     @Override
-    public BankAccount getAccount(String accountNumber) {
+    public BankAccount getAccount(String accountNumber) throws SQLException {
         return null;
     }
 

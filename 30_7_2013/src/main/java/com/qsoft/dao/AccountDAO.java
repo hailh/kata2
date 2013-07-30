@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public interface AccountDAO {
     BankAccount createAccount(String accountNumber, long timestamp) throws SQLException;
 
-    BankAccount getAccount(String accountNumber);
+    BankAccount getAccount(String accountNumber) throws SQLException;
 
     long deposit(String accountNumber, long amount, String description);
 

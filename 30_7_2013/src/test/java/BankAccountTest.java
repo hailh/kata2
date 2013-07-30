@@ -98,4 +98,10 @@ public class BankAccountTest {
         BankAccount account = service.open(accountNumber, timestamp);
         assertTrue(account.getBalance() == 0);
     }
+
+    @Test
+    public void getAccountInformationTest() throws SQLException {
+        setUp();
+        assertTrue(service.getAccount(accountNumber) != null);
+    }
 }

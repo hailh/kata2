@@ -22,7 +22,7 @@ public interface AccountService {
 
     void setAccountDAO(AccountDAO accountDAO);
 
-    BankAccount getAccount(String accountNumber);
+    BankAccount getAccount(String accountNumber) throws SQLException;
 
     long deposit(String accountNumber, long amount, String description);
 
