@@ -129,4 +129,9 @@ public class BankAccountTest {
         service.withdraw(accountNumber, amount, description);
         assertTrue(transactionDAO.getTransactionsOccurred(accountNumber).size() == 4);
     }
+
+    @Test
+    public void getTransactionsOccurredTest() throws SQLException {
+        assertTrue(!transactionDAO.getTransactionsOccurred(accountNumber).isEmpty());
+    }
 }
