@@ -104,4 +104,13 @@ public class BankAccountTest {
         setUp();
         assertTrue(service.getAccount(accountNumber) != null);
     }
+
+    @Test
+    public void depositAccountAndReturnBalanceAfterChangingTest() throws SQLException {
+        setUp();
+        BankAccount account = service.getAccount(accountNumber);
+        long oldBalance = account.getBalance();
+
+        assertTrue(service.deposit(accountNumber, amount, description) == oldBalance + amount);
+    }
 }
