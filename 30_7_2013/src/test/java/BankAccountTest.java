@@ -58,6 +58,7 @@ public class BankAccountTest {
 
     @Before
     public void importDataSet() throws Exception {
+        setUp();
         IDataSet dataSet = readDataSet();
         cleanlyInsert(dataSet);
     }
@@ -94,20 +95,17 @@ public class BankAccountTest {
 
     @Test
     public void openNewAccountWithBalanceEqualToZeroTest() throws SQLException {
-        setUp();
         BankAccount account = service.open(accountNumber, timestamp);
         assertTrue(account.getBalance() == 0);
     }
 
     @Test
     public void getAccountInformationTest() throws SQLException {
-        setUp();
         assertTrue(service.getAccount(accountNumber) != null);
     }
 
     @Test
     public void depositAccountAndReturnBalanceAfterChangingTest() throws SQLException {
-        setUp();
         BankAccount account = service.getAccount(accountNumber);
         long oldBalance = account.getBalance();
         assertTrue(service.deposit(accountNumber, amount, description) == oldBalance + amount);
@@ -115,17 +113,14 @@ public class BankAccountTest {
 
     @Test
     public void depositAccountAndSaveTransactionTest() throws SQLException {
-        setUp();
         service.deposit(accountNumber, amount, description);
         assertTrue(!transactionDAO.getTransactionsOccurred(accountNumber).isEmpty());
     }
 
     @Test
     public void withdrawAccountAndReturnBalanceAfterChangingTest() throws SQLException {
-        setUp();
         BankAccount account = service.getAccount(accountNumber);
         long oldBalance = account.getBalance();
-
         assertTrue(service.withdraw(accountNumber, amount, description) == oldBalance - amount);
     }
 }

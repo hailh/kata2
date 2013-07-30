@@ -30,7 +30,7 @@ public interface AccountService {
 
     void setCalendar(Calendar calendar);
 
-    long withdraw(String accountNumber, long amount, String description);
+    long withdraw(String accountNumber, long amount, String description) throws SQLException;
 
     List<Transaction> getTransactionsOccurred(String accountNumber) throws SQLException;
 

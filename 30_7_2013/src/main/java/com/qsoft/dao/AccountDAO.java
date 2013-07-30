@@ -18,5 +18,5 @@ public interface AccountDAO {
 
     long deposit(String accountNumber, long amount, String description) throws SQLException;
 
-    long withdraw(String accountNumber, long amount, String description);
+    long withdraw(String accountNumber, long amount, String description) throws SQLException;
 }
