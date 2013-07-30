@@ -66,6 +66,7 @@ public class BankAccountTest {
 
         when(accountDAO.deposit(accountNumber, amount, description)).thenReturn(account.getBalance() + amount);
         assertTrue(service.deposit(accountNumber, amount, description) == oldBalance + amount);
+        verify(accountDAO).deposit(accountNumber, amount, description);
     }
 
     @Test
@@ -93,5 +94,6 @@ public class BankAccountTest {
 
         when(accountDAO.withdraw(accountNumber, amount, description)).thenReturn(account.getBalance() - amount);
         assertTrue(service.withdraw(accountNumber, amount, description) == oldBalance - amount);
+        verify(accountDAO).withdraw(accountNumber, amount, description);
     }
 }
