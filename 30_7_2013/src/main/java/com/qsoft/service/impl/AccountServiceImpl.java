@@ -8,7 +8,6 @@ import com.qsoft.service.AccountService;
 
 import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -66,7 +65,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime) {
+    public List<Transaction> getTransactionsOccurred(String accountNumber, long startTime, long stopTime) throws SQLException {
         return transactionDAO.getTransactionsOccurred(accountNumber, startTime, stopTime);
     }
 

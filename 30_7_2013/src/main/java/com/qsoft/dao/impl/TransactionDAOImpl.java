@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -49,8 +48,14 @@ public class TransactionDAOImpl implements TransactionDAO{
     }
 
     @Override
-    public List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime) {
-        return null;
+    public List<Transaction> getTransactionsOccurred(String accountNumber, long startTime, long stopTime) throws SQLException {
+        String queryString = "SELECT * FROM Transactions WHERE accountNumber ='" + accountNumber + "' and timeCreated >= " + startTime + " and timeCreated <= " + stopTime;
+        ResultSet resultSet = dbConnection.createStatement().executeQuery(queryString);
+        List<Transaction> results = new ArrayList<Transaction>();
+        while (resultSet.next()){
+            results.add(new Transaction(accountNumber, resultSet.getLong("timeCreated"), resultSet.getLong("amount"), resultSet.getString("description")));
+        }
+        return results;
     }
 
     @Override

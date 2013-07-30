@@ -3,7 +3,6 @@ package com.qsoft.dao;
 import com.qsoft.model.Transaction;
 
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,7 +19,7 @@ public interface TransactionDAO {
 
     List<Transaction> getTransactionsOccurred(String accountNumber) throws SQLException;
 
-    List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime);
+    List<Transaction> getTransactionsOccurred(String accountNumber, long startTime, long stopTime) throws SQLException;
 
     List<Transaction> getNewTransactionsOccurred(String accountNumber, int times);
 }

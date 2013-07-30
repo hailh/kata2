@@ -20,7 +20,6 @@ import javax.sql.DataSource;
 import java.nio.charset.Charset;
 import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.Date;
 
 import static org.junit.Assert.assertTrue;
 
@@ -41,8 +40,8 @@ public class BankAccountTest {
     long timestamp = 5000L;
     long amount = 1000;
     String description = "Some thing";
-    Date startTime = new Date(2013, 7, 15);
-    Date stopTime = new Date(2013, 7, 20);
+    long startTime;
+    long stopTime;
     int times = 100;
 
     private static final String JDBC_DRIVER = org.h2.Driver.class.getName();
@@ -136,7 +135,9 @@ public class BankAccountTest {
     }
 
     @Test
-    public void getTransactionsOccurredFromStartTimeToStopTimeTest() {
+    public void getTransactionsOccurredFromStartTimeToStopTimeTest() throws SQLException {
+        startTime = calendar.getTimeInMillis() - 1000;
+        stopTime = calendar.getTimeInMillis();
         assertTrue(!service.getTransactionsOccurred(accountNumber, startTime, stopTime).isEmpty());
     }
 }
