@@ -58,10 +58,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BankAccountTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BankAccountTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/BankAccountTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="0" selection-start="4087" selection-end="4087" vertical-scroll-proportion="0.0">
+            <state line="123" column="28" selection-start="4217" selection-end="4217" vertical-scroll-proportion="0.57423973">
               <folding />
             </state>
           </provider>
@@ -87,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransactionDAOImpl.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TransactionDAOImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/TransactionDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="85" selection-start="1691" selection-end="1691" vertical-scroll-proportion="0.6208791">
+            <state line="39" column="113" selection-start="1313" selection-end="1313" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#1555#1568#0" expanded="true" />
               </folding>
@@ -121,11 +121,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/model/BankAccount.java" />
         <option value="$PROJECT_DIR$/src/test/resources/dataset.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/AccountDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/BankAccountTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/schema.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/service/impl/AccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/model/Transaction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/TransactionDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/BankAccountTest.java" />
       </list>
     </option>
   </component>
@@ -761,13 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BankAccountTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="0" selection-start="4087" selection-end="4087" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/model/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="39" selection-start="574" selection-end="574" vertical-scroll-proportion="0.57423973">
@@ -784,10 +777,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/TransactionDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="85" selection-start="1691" selection-end="1691" vertical-scroll-proportion="0.6208791">
+        <state line="39" column="113" selection-start="1313" selection-end="1313" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1555#1568#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BankAccountTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="28" selection-start="4217" selection-end="4217" vertical-scroll-proportion="0.57423973">
+          <folding />
         </state>
       </provider>
     </entry>

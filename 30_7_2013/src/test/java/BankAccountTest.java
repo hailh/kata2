@@ -110,7 +110,6 @@ public class BankAccountTest {
         setUp();
         BankAccount account = service.getAccount(accountNumber);
         long oldBalance = account.getBalance();
-
         assertTrue(service.deposit(accountNumber, amount, description) == oldBalance + amount);
     }
 
@@ -119,5 +118,14 @@ public class BankAccountTest {
         setUp();
         service.deposit(accountNumber, amount, description);
         assertTrue(!transactionDAO.getTransactionsOccurred(accountNumber).isEmpty());
+    }
+
+    @Test
+    public void withdrawAccountAndReturnBalanceAfterChangingTest() throws SQLException {
+        setUp();
+        BankAccount account = service.getAccount(accountNumber);
+        long oldBalance = account.getBalance();
+
+        assertTrue(service.withdraw(accountNumber, amount, description) == oldBalance - amount);
     }
 }
