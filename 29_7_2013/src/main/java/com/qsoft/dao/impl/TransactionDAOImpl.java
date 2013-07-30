@@ -33,4 +33,9 @@ public class TransactionDAOImpl implements TransactionDAO{
     public List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime) {
         return null;
     }
+
+    @Override
+    public List<Transaction> getNewTransactionsOccurred(String accountNumber, int times) {
+        return null;
+    }
 }

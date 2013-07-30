@@ -20,4 +20,6 @@ public interface TransactionDAO {
     List<Transaction> getTransactionsOccurred(String accountNumber);
 
     List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime);
+
+    List<Transaction> getNewTransactionsOccurred(String accountNumber, int times);
 }

@@ -129,4 +129,14 @@ public class BankAccountTest {
         service.getTransactionsOccurred(accountNumber, startTime, stopTime);
         verify(transactionDAO).getTransactionsOccurred(accountNumber, startTime, stopTime);
     }
+
+    @Test
+    public void getNewTransactionsOccurredTest() {
+        setUp();
+        String accountNumber = "0123456789";
+        int times = 100;
+
+        service.getNewTransactionsOccurred(accountNumber, times);
+        verify(transactionDAO).getNewTransactionsOccurred(accountNumber, times);
+    }
 }
