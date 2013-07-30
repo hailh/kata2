@@ -10,7 +10,7 @@ import com.qsoft.model.BankAccount;
  * To change this template use File | Settings | File Templates.
  */
 public interface AccountDAO {
-    BankAccount createAccount(String accountNumber);
+    BankAccount createAccount(String accountNumber, long timestamp);
 
     BankAccount getAccount(String accountNumber);
 

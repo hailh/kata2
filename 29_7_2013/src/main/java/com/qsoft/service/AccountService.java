@@ -17,7 +17,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface AccountService {
-    BankAccount open(String accountNumber);
+    BankAccount open(String accountNumber, long timestamp);
 
     void setAccountDAO(AccountDAO accountDAO);
 

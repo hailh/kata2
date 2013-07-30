@@ -23,8 +23,8 @@ public class AccountServiceImpl implements AccountService {
     Calendar calendar;
 
     @Override
-    public BankAccount open(String accountNumber) {
-        return accountDAO.createAccount(accountNumber);
+    public BankAccount open(String accountNumber, long timestamp) {
+        return accountDAO.createAccount(accountNumber, timestamp);
     }
 
     @Override

@@ -12,7 +12,7 @@ import com.qsoft.model.BankAccount;
  */
 public class AccountDAOImpl implements AccountDAO{
     @Override
-    public BankAccount createAccount(String accountNumber) {
+    public BankAccount createAccount(String accountNumber, long timestamp) {
         return null;
     }
 

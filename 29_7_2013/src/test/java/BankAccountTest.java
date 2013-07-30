@@ -40,9 +40,10 @@ public class BankAccountTest {
     public void openNewAccountWithBalanceEqualToZeroTest() {
         setUp();
         String accountNumber = "0123456789";
-        when(accountDAO.createAccount(accountNumber)).thenReturn(new BankAccount(accountNumber));
-        BankAccount account = service.open(accountNumber);
-        verify(accountDAO).createAccount(accountNumber);
+        long timestamp = 5000L;
+        when(accountDAO.createAccount(accountNumber, timestamp)).thenReturn(new BankAccount(accountNumber));
+        BankAccount account = service.open(accountNumber, timestamp);
+        verify(accountDAO).createAccount(accountNumber, timestamp);
         assertTrue(account.getBalance() == 0);
     }
 
