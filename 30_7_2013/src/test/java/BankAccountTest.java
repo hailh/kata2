@@ -113,4 +113,11 @@ public class BankAccountTest {
 
         assertTrue(service.deposit(accountNumber, amount, description) == oldBalance + amount);
     }
+
+    @Test
+    public void depositAccountAndSaveTransactionTest() throws SQLException {
+        setUp();
+        service.deposit(accountNumber, amount, description);
+        assertTrue(!transactionDAO.getTransactionsOccurred(accountNumber).isEmpty());
+    }
 }
