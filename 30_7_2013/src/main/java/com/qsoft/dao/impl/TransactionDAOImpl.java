@@ -3,6 +3,11 @@ package com.qsoft.dao.impl;
 import com.qsoft.dao.TransactionDAO;
 import com.qsoft.model.Transaction;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,9 +19,16 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class TransactionDAOImpl implements TransactionDAO{
-    @Override
-    public void deposit(String accountNumber, long timestamp, long amount, String description) {
+    private Connection dbConnection;
 
+    public TransactionDAOImpl(DataSource dataSource) throws SQLException {
+        this.dbConnection = dataSource.getConnection();
+    }
+
+    @Override
+    public void deposit(String accountNumber, long timestamp, long amount, String description) throws SQLException {
+        String queryString = "insert into Transactions(accountNumber, amount, timeCreated, description) values ('" + accountNumber + "'," + amount + "," + timestamp + ",'" + description + "')";
+        dbConnection.createStatement().executeUpdate(queryString);
     }
 
     @Override
@@ -25,8 +37,14 @@ public class TransactionDAOImpl implements TransactionDAO{
     }
 
     @Override
-    public List<Transaction> getTransactionsOccurred(String accountNumber) {
-        return null;
+    public List<Transaction> getTransactionsOccurred(String accountNumber) throws SQLException {
+        String queryString = "SELECT * FROM Transactions WHERE accountNumber ='" + accountNumber + "'";
+        ResultSet resultSet = dbConnection.createStatement().executeQuery(queryString);
+        List<Transaction> results = new ArrayList<Transaction>();
+        while (resultSet.next()){
+            results.add(new Transaction(accountNumber, resultSet.getLong("timeCreated"), resultSet.getLong("amount"), resultSet.getString("description")));
+        }
+        return results;
     }
 
     @Override

@@ -13,6 +13,13 @@ public class Transaction {
     private long amount;
     private String description;
 
+    public Transaction(String accountNumber, long timestamp, long amount, String description){
+        this.accountNumber = accountNumber;
+        this.timestamp = timestamp;
+        this.amount = amount;
+        this.description = description;
+    }
+
     public String getAccountNumber() {
         return accountNumber;
     }

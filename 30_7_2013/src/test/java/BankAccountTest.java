@@ -84,7 +84,7 @@ public class BankAccountTest {
     public void setUp() throws SQLException {
         service = new AccountServiceImpl();
         accountDAO = new AccountDAOImpl(dataSource());
-        transactionDAO = new TransactionDAOImpl();
+        transactionDAO = new TransactionDAOImpl(dataSource());
         calendar = Calendar.getInstance();
         service.setAccountDAO(accountDAO);
         service.setTransactionDAO(transactionDAO);

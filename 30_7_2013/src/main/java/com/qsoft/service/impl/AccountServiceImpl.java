@@ -61,7 +61,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public List<Transaction> getTransactionsOccurred(String accountNumber) {
+    public List<Transaction> getTransactionsOccurred(String accountNumber) throws SQLException {
         return transactionDAO.getTransactionsOccurred(accountNumber);
     }
 

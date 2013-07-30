@@ -6,7 +6,7 @@ create table if not exists BankAccount (
 
 create table if not exists Transactions (
   accountNumber varchar,
-  timeCreated integer,
+  timeCreated bigint,
   amount integer,
   description varchar
 );

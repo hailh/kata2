@@ -32,7 +32,7 @@ public interface AccountService {
 
     long withdraw(String accountNumber, long amount, String description);
 
-    List<Transaction> getTransactionsOccurred(String accountNumber);
+    List<Transaction> getTransactionsOccurred(String accountNumber) throws SQLException;
 
     List<Transaction> getTransactionsOccurred(String accountNumber, Date startTime, Date stopTime);
 
