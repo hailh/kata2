@@ -123,4 +123,10 @@ public class BankAccountTest {
         long oldBalance = account.getBalance();
         assertTrue(service.withdraw(accountNumber, amount, description) == oldBalance - amount);
     }
+
+    @Test
+    public void withdrawAccountAndSaveTransactionTest() throws SQLException {
+        service.withdraw(accountNumber, amount, description);
+        assertTrue(transactionDAO.getTransactionsOccurred(accountNumber).size() == 4);
+    }
 }
