@@ -32,8 +32,9 @@ public class TransactionDAOImpl implements TransactionDAO{
     }
 
     @Override
-    public void withdraw(String accountNumber, long timestamp, long amount, String description) {
-
+    public void withdraw(String accountNumber, long timestamp, long amount, String description) throws SQLException {
+        String queryString = "insert into Transactions(accountNumber, amount, timeCreated, description) values ('" + accountNumber + "'," + (-1)*amount + "," + timestamp + ",'" + description + "')";
+        dbConnection.createStatement().executeUpdate(queryString);
     }
 
     @Override

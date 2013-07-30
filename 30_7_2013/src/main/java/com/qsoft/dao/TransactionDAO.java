@@ -16,7 +16,7 @@ import java.util.List;
 public interface TransactionDAO {
     void deposit(String accountNumber, long timestamp, long amount, String description) throws SQLException;
 
-    void withdraw(String accountNumber, long timestamp, long amount, String description);
+    void withdraw(String accountNumber, long timestamp, long amount, String description) throws SQLException;
 
     List<Transaction> getTransactionsOccurred(String accountNumber) throws SQLException;
 
