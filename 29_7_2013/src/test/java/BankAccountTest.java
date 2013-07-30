@@ -104,6 +104,7 @@ public class BankAccountTest {
         final long amount = 1000;
         String description = "Some thing";
 
+        when(calendar.getTimeInMillis()).thenReturn(2000L);
         service.withdraw(accountNumber, amount, description);
         verify(transactionDAO).withdraw(accountNumber, 2000L, amount, description);
     }

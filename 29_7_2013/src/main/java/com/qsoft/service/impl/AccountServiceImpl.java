@@ -52,6 +52,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public long withdraw(String accountNumber, long amount, String description) {
+        transactionDAO.withdraw(accountNumber, calendar.getTimeInMillis(), amount, description);
         return accountDAO.withdraw(accountNumber, amount, description);
     }
 }
