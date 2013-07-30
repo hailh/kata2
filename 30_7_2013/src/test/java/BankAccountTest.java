@@ -100,7 +100,7 @@ public class BankAccountTest {
 
     @Test
     public void getAccountInformationTest() throws SQLException {
-        assertTrue(service.getAccount(accountNumber) != null);
+        assertTrue(service.getAccount(accountNumber).getAccountNumber() == accountNumber);
     }
 
     @Test

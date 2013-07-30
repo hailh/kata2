@@ -58,10 +58,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BankAccountTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BankAccountTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/BankAccountTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="40" selection-start="5210" selection-end="5210" vertical-scroll-proportion="0.0">
+            <state line="114" column="62" selection-start="3989" selection-end="3989" vertical-scroll-proportion="-0.18604651">
               <folding />
             </state>
           </provider>
@@ -76,30 +76,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountDAOImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/AccountDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="73" selection-start="2581" selection-end="2581" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransactionDAOImpl.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/TransactionDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="52" selection-start="2941" selection-end="2941" vertical-scroll-proportion="0.53296703">
-              <folding>
-                <element signature="e#1817#1830#0" expanded="true" />
-                <element signature="e#2516#2529#0" expanded="true" />
-                <element signature="e#3146#3159#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -110,7 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/model/BankAccount.java" />
         <option value="$PROJECT_DIR$/src/test/resources/dataset.xml" />
         <option value="$PROJECT_DIR$/src/test/resources/schema.sql" />
@@ -119,8 +94,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/service/AccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/dao/TransactionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/service/impl/AccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/BankAccountTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/TransactionDAOImpl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/BankAccountTest.java" />
       </list>
     </option>
   </component>
@@ -712,13 +688,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="19" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.9391771">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.3.172/h2-1.3.172.jar!/org/h2/message/DbException.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="0" selection-start="2891" selection-end="2891" vertical-scroll-proportion="0.42537314">
@@ -770,9 +739,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/AccountDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="73" selection-start="2581" selection-end="2581" vertical-scroll-proportion="0.0">
+        <state line="62" column="73" selection-start="2581" selection-end="2581" vertical-scroll-proportion="1.7161173">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/TransactionDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="52" selection-start="2941" selection-end="2941" vertical-scroll-proportion="1.6813186">
+          <folding>
+            <element signature="e#1817#1830#0" expanded="true" />
+            <element signature="e#2516#2529#0" expanded="true" />
+            <element signature="e#3146#3159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -784,21 +764,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BankAccountTest.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="40" selection-start="5210" selection-end="5210" vertical-scroll-proportion="0.0">
+        <state line="36" column="0" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.7567084">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/TransactionDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/BankAccountTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="52" selection-start="2941" selection-end="2941" vertical-scroll-proportion="0.53296703">
-          <folding>
-            <element signature="e#1817#1830#0" expanded="true" />
-            <element signature="e#2516#2529#0" expanded="true" />
-            <element signature="e#3146#3159#0" expanded="true" />
-          </folding>
+        <state line="114" column="62" selection-start="3989" selection-end="3989" vertical-scroll-proportion="-0.18604651">
+          <folding />
         </state>
       </provider>
     </entry>
