@@ -42,7 +42,7 @@ public class BankAccountTest {
     String description = "Some thing";
     long startTime;
     long stopTime;
-    int times = 100;
+    int times = 3;
 
     private static final String JDBC_DRIVER = org.h2.Driver.class.getName();
     private static final String JDBC_URL = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1";
@@ -139,5 +139,10 @@ public class BankAccountTest {
         startTime = calendar.getTimeInMillis() - 1000;
         stopTime = calendar.getTimeInMillis();
         assertTrue(!service.getTransactionsOccurred(accountNumber, startTime, stopTime).isEmpty());
+    }
+
+    @Test
+    public void getNewTransactionsOccurredTest() {
+        assertTrue(service.getNewTransactionsOccurred(accountNumber, times).size() == times);
     }
 }
