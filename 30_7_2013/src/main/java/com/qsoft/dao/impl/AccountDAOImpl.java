@@ -46,8 +46,16 @@ public class AccountDAOImpl implements AccountDAO{
     }
 
     @Override
-    public long deposit(String accountNumber, long amount, String description) {
-        return 0;
+    public long deposit(String accountNumber, long amount, String description) throws SQLException {
+        String queryString = "update BankAccount set balance = (balance +" + amount + ") where accountNumber = '" + accountNumber + "' ";
+        dbConnection.createStatement().executeUpdate(queryString);
+
+        queryString = "SELECT * FROM BankAccount WHERE accountNumber ='" + accountNumber + "'";
+        ResultSet resultSet = dbConnection.createStatement().executeQuery(queryString);
+        if(resultSet.next())
+            return resultSet.getLong("balance");
+        else
+            return 0;
     }
 
     @Override

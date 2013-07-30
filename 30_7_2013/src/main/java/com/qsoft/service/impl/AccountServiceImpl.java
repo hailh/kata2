@@ -39,7 +39,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public long deposit(String accountNumber, long amount, String description) {
+    public long deposit(String accountNumber, long amount, String description) throws SQLException {
         transactionDAO.deposit(accountNumber, calendar.getTimeInMillis(), amount, description);
         return accountDAO.deposit(accountNumber, amount, description);
     }

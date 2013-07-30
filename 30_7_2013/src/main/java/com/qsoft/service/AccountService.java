@@ -24,7 +24,7 @@ public interface AccountService {
 
     BankAccount getAccount(String accountNumber) throws SQLException;
 
-    long deposit(String accountNumber, long amount, String description);
+    long deposit(String accountNumber, long amount, String description) throws SQLException;
 
     void setTransactionDAO(TransactionDAO transactionDAO);
 
