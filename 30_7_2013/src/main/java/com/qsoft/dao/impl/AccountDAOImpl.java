@@ -37,7 +37,12 @@ public class AccountDAOImpl implements AccountDAO{
 
     @Override
     public BankAccount getAccount(String accountNumber) throws SQLException {
-        return null;
+        String queryString = "SELECT * FROM BankAccount WHERE accountNumber ='" + accountNumber + "'";
+        ResultSet resultSet = dbConnection.createStatement().executeQuery(queryString);
+        if(resultSet.next())
+            return new BankAccount(accountNumber, resultSet.getLong("balance"),resultSet.getLong("timeCreated"));
+        else
+            return null;
     }
 
     @Override
