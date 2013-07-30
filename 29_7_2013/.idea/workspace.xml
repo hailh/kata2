@@ -103,7 +103,7 @@
       <file leaf-file-name="AccountServiceImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/service/impl/AccountServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="20" selection-start="2261" selection-end="2261" vertical-scroll-proportion="0.0">
+            <state line="73" column="77" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -163,9 +163,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/model/Transaction.java" />
         <option value="$PROJECT_DIR$/src/test/java/BankAccountTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/service/AccountService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qsoft/service/impl/AccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/dao/TransactionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qsoft/dao/impl/TransactionDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qsoft/service/impl/AccountServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -777,13 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/service/impl/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="20" selection-start="2261" selection-end="2261" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/dao/TransactionDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
@@ -799,6 +792,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qsoft/service/impl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="77" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -71,6 +71,6 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<Transaction> getNewTransactionsOccurred(String accountNumber, int times) {
-        return null;
+        return transactionDAO.getNewTransactionsOccurred(accountNumber, times);
     }
 }
