@@ -14,4 +14,9 @@ public class TransactionDAOImpl implements TransactionDAO{
     public void deposit(String accountNumber, long timestamp, long amount, String description) {
 
     }
+
+    @Override
+    public void withdraw(String accountNumber, long timestamp, long amount, String description) {
+
+    }
 }

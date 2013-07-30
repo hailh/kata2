@@ -9,4 +9,6 @@ package com.qsoft.dao;
  */
 public interface TransactionDAO {
     void deposit(String accountNumber, long timestamp, long amount, String description);
+
+    void withdraw(String accountNumber, long timestamp, long amount, String description);
 }

@@ -96,4 +96,15 @@ public class BankAccountTest {
         assertTrue(service.withdraw(accountNumber, amount, description) == oldBalance - amount);
         verify(accountDAO).withdraw(accountNumber, amount, description);
     }
+
+    @Test
+    public void withdrawAccountAndSaveTransactionTest() {
+        setUp();
+        String accountNumber = "0123456789";
+        final long amount = 1000;
+        String description = "Some thing";
+
+        service.withdraw(accountNumber, amount, description);
+        verify(transactionDAO).withdraw(accountNumber, 2000L, amount, description);
+    }
 }
