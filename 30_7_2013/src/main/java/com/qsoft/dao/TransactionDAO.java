@@ -21,5 +21,5 @@ public interface TransactionDAO {
 
     List<Transaction> getTransactionsOccurred(String accountNumber, long startTime, long stopTime) throws SQLException;
 
-    List<Transaction> getNewTransactionsOccurred(String accountNumber, int times);
+    List<Transaction> getNewTransactionsOccurred(String accountNumber, int times) throws SQLException;
 }

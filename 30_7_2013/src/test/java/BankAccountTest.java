@@ -142,7 +142,7 @@ public class BankAccountTest {
     }
 
     @Test
-    public void getNewTransactionsOccurredTest() {
+    public void getNewTransactionsOccurredTest() throws SQLException {
         assertTrue(service.getNewTransactionsOccurred(accountNumber, times).size() == times);
     }
 }

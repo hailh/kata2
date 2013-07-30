@@ -59,7 +59,13 @@ public class TransactionDAOImpl implements TransactionDAO{
     }
 
     @Override
-    public List<Transaction> getNewTransactionsOccurred(String accountNumber, int times) {
-        return null;
+    public List<Transaction> getNewTransactionsOccurred(String accountNumber, int times) throws SQLException {
+        String queryString = "SELECT top "+ times +" * FROM Transactions WHERE accountNumber ='" + accountNumber + "'";
+        ResultSet resultSet = dbConnection.createStatement().executeQuery(queryString);
+        List<Transaction> results = new ArrayList<Transaction>();
+        while (resultSet.next()){
+            results.add(new Transaction(accountNumber, resultSet.getLong("timeCreated"), resultSet.getLong("amount"), resultSet.getString("description")));
+        }
+        return results;
     }
 }
